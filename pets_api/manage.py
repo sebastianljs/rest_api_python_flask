@@ -7,7 +7,7 @@ app = create_app()
 manager = Manager(app)
 
 manager.add_command(
-    "run_server",
+    "run-server",
     Server(
         use_debugger=True,
         use_reloader=True,
