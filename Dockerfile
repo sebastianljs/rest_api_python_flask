@@ -11,6 +11,7 @@ RUN mkdir /opt/pets-api
 WORKDIR /opt/pets-api
 ADD . .
 RUN pip install -r requirements.txt
+RUN pip install -e .
 EXPOSE 5000
 CMD python pets_api/manage.py run-server
 

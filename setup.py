@@ -1,5 +1,6 @@
 from setuptools import setup
 
+
 def main():
     setup(
         name="pets-api",
@@ -10,6 +11,7 @@ def main():
         license="MIT",
         packages=["pets_api"]
     )
+
 
 if __name__ == "__main__":
     main()

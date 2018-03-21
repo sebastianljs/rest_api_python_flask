@@ -9,7 +9,7 @@ from jsonschema.exceptions import best_match
 from pets_api.app.decorators import app_required
 from pets_api.store.models import Store
 from pets_api.store.schema import schema
-from pet.models import Pet
+from pets_api.pet.models import Pet
 
 
 class StoreAPI(MethodView):

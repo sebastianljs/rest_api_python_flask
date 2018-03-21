@@ -1,8 +1,9 @@
+from subprocess import call
 from flask import Flask
 from flask_mongoengine import MongoEngine
 from pets_api.store.views import store_app
 from pets_api.home.views import home_app
-from pet.views import pet_app
+from pets_api.pet.views import pet_app
 from pets_api.app.views import app_app
 from pets_api.settings import MONGODB_HOST
 
@@ -23,9 +24,10 @@ def create_app(**config_overrides):
 
     return app
 
+
 def fixtures(test_db, collection, fixture):
-    command = "mongoimport -h %s \
-        -d %s \
-        -c %s \
-        < %s" % (MONGODB_HOST, test_db, collection, fixture)
+    command = "mongoimport -h {} \
+        -d {} \
+        -c {} \
+        < {}".format(MONGODB_HOST, test_db, collection, fixture)
     call(command, shell=True)
